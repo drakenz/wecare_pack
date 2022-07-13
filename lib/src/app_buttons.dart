@@ -6,8 +6,13 @@ class RoundedButton extends StatelessWidget {
   final buttonText;
   final buttonRadius;
   final void Function()? onPressed;
+  final int ColorHex;
   const RoundedButton(
-      {Key? key, this.buttonText, this.buttonRadius, this.onPressed})
+      {Key? key,
+      this.buttonText,
+      this.buttonRadius,
+      this.onPressed,
+      required this.ColorHex})
       : super(key: key);
 
   @override
@@ -18,6 +23,10 @@ class RoundedButton extends StatelessWidget {
         buttonText,
         style: TextStyle(color: Colors.white),
       ),
+      style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(borderRadius: buttonRadius)),
+          backgroundColor: MaterialStateProperty.all(Color(ColorHex))),
     );
   }
 }
