@@ -21,12 +21,8 @@ class CardComponent {
   late BuildContext ctx;
   late Widget child;
   late double height;
-  CardComponent(BuildContext ctx, Widget child) {
-    this.ctx = ctx;
-    this.child = child;
-    if (this.height == null) {
-      this.height = (MediaQuery.of(ctx).size.height / 3) * 2;
-    }
+  CardComponent(this.ctx, this.child) {
+    height = (MediaQuery.of(ctx).size.height / 3) * 2;
   }
   BoxDecoration decoration = const BoxDecoration(
       color: Colors.white,
