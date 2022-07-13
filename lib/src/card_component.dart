@@ -10,7 +10,7 @@ class CardComponent extends StatefulWidget {
   final BoxDecoration decoration = const BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(5), topRight: Radius.circular(5)));
+          topLeft: Radius.circular(20), topRight: Radius.circular(20)));
 
   @override
   State<CardComponent> createState() => _CardComponentState();
