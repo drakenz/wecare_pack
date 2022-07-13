@@ -17,23 +17,4 @@ Widget backgroundColors(BuildContext ctx, Widget child) {
 }
 //Card Component Shown on the start screen on both versions
 
-class CardComponent {
-  late BuildContext ctx;
-  late Widget child;
-  late double height;
-  CardComponent(this.ctx, this.child) {
-    height = (MediaQuery.of(ctx).size.height / 3) * 2;
-  }
-  BoxDecoration decoration = const BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(5), topRight: Radius.circular(5)));
 
-  Widget CardBuild() {
-    return Container(
-      height: this.height,
-      decoration: decoration,
-      child: this.child,
-    );
-  }
-}
