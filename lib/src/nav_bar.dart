@@ -29,7 +29,9 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
         ),
-      ))
+        child: Icon(Icons.person),
+      )),
+      BottomNavigationBarItem(icon: Icon(Icons.phone))
     ]);
   }
 }
