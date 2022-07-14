@@ -22,8 +22,8 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
   }
 
   @override
+  int currentIndex = 0;
   Widget build(BuildContext context) {
-    int currentIndex = 0;
     return BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (value) {
@@ -35,6 +35,7 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
           BottomNavigationBarItem(
               label: "Test1",
               icon: ScaleTransition(
+                child: Icon(Icons.person),
                 scale: Tween(begin: 0.75, end: 2.0).animate(CurvedAnimation(
                     parent: _controller, curve: Curves.bounceIn)),
               )),
