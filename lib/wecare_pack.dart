@@ -4,3 +4,4 @@ library wecare_pack;
 export 'src/themedata.dart';
 export 'src/card_component.dart';
 export 'src/app_buttons.dart';
+export 'src/nav_bar.dart';
