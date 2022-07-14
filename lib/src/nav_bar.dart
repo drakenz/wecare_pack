@@ -34,12 +34,15 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
         items: [
           BottomNavigationBarItem(
               label: "Test1",
-              icon: ScaleTransition(
-                child: Icon(Icons.person),
-                scale: Tween(begin: 0.75, end: 2.0).animate(CurvedAnimation(
-                    parent: _controller, curve: Curves.bounceIn)),
+              icon: Container(
+                decoration: const BoxDecoration(shape: BoxShape.circle),
+                child: ScaleTransition(
+                  scale: Tween(begin: 0.75, end: 2.0).animate(CurvedAnimation(
+                      parent: _controller, curve: Curves.bounceIn)),
+                  child: const Icon(Icons.person),
+                ),
               )),
-          BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Test2")
+          const BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Test2")
         ]);
   }
 }
