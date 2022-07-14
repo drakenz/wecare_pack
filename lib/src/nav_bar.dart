@@ -17,6 +17,7 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
     super.initState();
     _controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _controller.repeat(reverse: true);
     sizeAnimation = Tween<double>(begin: 50, end: 100).animate(_controller);
   }
 
@@ -28,18 +29,14 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
         onTap: (value) {
           setState(() {
             currentIndex = value;
-            _controller.repeat();
           });
         },
         items: [
           BottomNavigationBarItem(
               label: "Test1",
-              icon: Container(
-                height: sizeAnimation.value,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(Icons.person),
+              icon: ScaleTransition(
+                scale: Tween(begin: 0.75, end: 2.0).animate(CurvedAnimation(
+                    parent: _controller, curve: Curves.bounceIn)),
               )),
           BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Test2")
         ]);
