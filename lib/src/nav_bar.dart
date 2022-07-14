@@ -22,17 +22,26 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(items: [
-      BottomNavigationBarItem(
-          label: "Test1",
-          icon: Container(
-            height: sizeAnimation.value,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-            ),
-            child: Icon(Icons.person),
-          )),
-      BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Test2")
-    ]);
+    int currentIndex = 0;
+    return BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (value) {
+          setState(() {
+            currentIndex = value;
+            _controller.repeat();
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+              label: "Test1",
+              icon: Container(
+                height: sizeAnimation.value,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(Icons.person),
+              )),
+          BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Test2")
+        ]);
   }
 }
