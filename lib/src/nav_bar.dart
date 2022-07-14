@@ -24,14 +24,15 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return BottomNavigationBar(items: [
       BottomNavigationBarItem(
+          label: "Test1",
           icon: Container(
-        height: sizeAnimation.value,
-        decoration: const BoxDecoration(
-          shape: BoxShape.circle,
-        ),
-        child: Icon(Icons.person),
-      )),
-      BottomNavigationBarItem(icon: Icon(Icons.phone))
+            height: sizeAnimation.value,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+            ),
+            child: Icon(Icons.person),
+          )),
+      BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Test2")
     ]);
   }
 }
